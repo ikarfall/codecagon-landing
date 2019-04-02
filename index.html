@@ -1,458 +1,394 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Ashekur Rahman">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
     <meta name="description" content="">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title -->
-    <title>Codecagon</title>
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
-    <!-- Plugin-CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Main-Stylesheets -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <!--[if lt IE 9]><script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="canonical" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-language" content="en">
+    <link rel="icon" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="apple-icon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="apple-icon-precomposed.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="310x310" href="ms-icon-310x310.png">
+<style>
+@font-face{font-family:'Squares';src:url(squares/SquaresBold.eot);src:url(squares/SquaresBold.eot?#iefix) format("embedded-opentype"),url(squares/SquaresBold.woff2) format("woff2"),url(squares/SquaresBold.woff) format("woff"),url(squares/SquaresBold.ttf) format("truetype"),url(squares/SquaresBold.svg#SquaresBold) format("svg");font-weight:700;font-style:normal}
+*{margin:0;padding:0;list-style-type:none;box-sizing:border-box;position:relative}
+body{font-family:'Noto Sans',sans-serif;font-size:18px;line-height:1.5em;position:relative;color:#333}
+.text-center{text-align:center}
+a{color:#598392;-webkit-transition:all .2s;-moz-transition:all .2s;-ms-transition:all .2s;-o-transition:all .2s;transition:all .2s}
+a:hover,button:hover{opacity:.8}
+.top-menu{line-height:1em;text-align:right;position:fixed;top:0;right:0;width:100vw;padding:24px 48px;background:rgba(1,22,30,.8);z-index:10;-webkit-transition:all .2s;-moz-transition:all .2s;-ms-transition:all .2s;-o-transition:all .2s;transition:all .2s}
+.top-menu a{display:inline-block;margin:12px;text-decoration:none;color:#fff}
+.top-menu a.active{color:#8eb773;font-weight:700}
+.logo{position:absolute;left:48px;top:10px}
+section,footer{width:100%;min-height:100vh;z-index:1}
+#home{color:#fff;display:flex;flex-direction:column;justify-content:center}
+#services{background-color:#fff}
+#advantages{background-color:#01161e;color:#598392}
+#pricing{background:#fff;color:#598392}
+footer{background:#01161e;bottom:0;color:#598392;padding-bottom:12px}
+.gradient-1:before,.gradient-2:before{content:'';position:absolute;left:0;top:0;width:100%;height:100%}
+.gradient-1:before{background-image:radial-gradient(70vw circle at 30% 50%,rgba(174,195,176,.4),rgba(1,22,30,.6),rgba(18,69,89,.8))}
+.gradient-2:before{background-image:linear-gradient(-20deg,rgba(1,22,30,.8),rgba(18,69,89,.8))}
+.video-bg{position:absolute;overflow:hidden;bottom:0;left:0;width:100%;height:100%;z-index:-1}
+.video-bg video{display:block;position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translateX(-50%) translateY(-50%);transition:1s opacity;background:url(codecagon-software-poster.jpg) no-repeat center center;background-size:cover}
+.content{width:90%;margin:0 auto;padding:0 5%;max-width:1600px}
+h1{font-family:'Squares';font-size:6em;line-height:1em;margin-bottom:48px;color:#000}
+h1:before{content:'';position:absolute;height:100%;left:-48px;border-left:3px solid #fff}
+h2{font-family:'Anton',sans-serif;font-size:4em;line-height:1em;margin-bottom:24px;color:#8eb773;padding-top:90px}
+h2:before{content:'';position:absolute;height:100%;top:0;left:-24px;border-left:3px solid #8eb773}
+h1+h2{font-family:'Anton',sans-serif;font-size:4.5em;white-space:nowrap;margin-top:-120px;color:#fff;opacity:.7}
+h1+h2:before{border-left:3px solid #8eb773}
+h3{font-size:1.6em;line-height:1em;font-weight:700;margin-bottom:13px;color:#124559}
+#advantages h3,#pricing h3{color:#aec3b0}
+p{max-width:600px}
+.grid-col-3,.grid-col-4{display:grid;grid-column-gap:72px;margin-top:72px}
+.grid-col-3{grid-template-columns:repeat(3,1fr)}
+.grid-col-4{grid-template-columns:repeat(4,1fr)}
+.grid-col-4.left-img{grid-row-gap:72px}
+.grid-col-3 div,.grid-col-4.right-img div{padding-bottom:72px}
+.grid-col-4 i{font-size:4.4em;line-height:1em;margin:0 12px 0 0;color:#8eb773;float:left}
+.frame{overflow:hidden;grid-row-start:1}
+.left-img{margin-right:10%}
+.right-img{margin-left:10%}
+.left-img .frame{grid-row-end:3;grid-column-start:1;grid-column-end:3}
+.right-img .frame{grid-row-end:4;grid-column-start:3;grid-column-end:5}
+.frame img{position:absolute;height:100%;top:0;left:0}
+.right-img .frame img{animation: rotation 40s infinite linear}
+@keyframes rotation {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(359deg)}
+}
+button{font-family:'Noto Sans',sans-serif;font-size:18px;border:0;background-color:#598392;color:#fff;width:100%;padding:12px}
+#contact-form input,#contact-form textarea{font-family:'Noto Sans',sans-serif;font-size:18px;background:transparent;border:0;border-bottom:1px solid #598392;width:100%;color:#fff;margin:12px 0;padding:12px 12px 0}
+#pricing p,footer p{margin-bottom:72px}
+@font-face{font-family:'icomoon';src:url(fonts/icomoon.eot?msjp2);src:url(fonts/icomoon.eot?msjp2#iefix) format("embedded-opentype"),url(fonts/icomoon.ttf?msjp2) format("truetype"),url(fonts/icomoon.woff?msjp2) format("woff"),url(fonts/icomoon.svg?msjp2#icomoon) format("svg");font-weight:400;font-style:normal}
+[class^="icon-"],[class*=" icon-"]{font-family:'icomoon'!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.icon-devices:before{content:"\e900"}
+.icon-extension:before{content:"\e901"}
+.icon-high-quality:before{content:"\e902"}
+.icon-settings-system:before{content:"\e903"}
+.icon-settings:before{content:"\e904"}
+.icon-view-quilt:before{content:"\e905"}
+.icon-palette:before{content:"\e906"}
+.icon-stack:before{content:"\e92e"}
+@media(min-width:767px) {.top-menu br{display:none}}
+@media(max-width:992px) {
+h1{font-size:5em;line-height:1em}
+h2{font-size:3em;line-height:1em}
+h1+h2{font-size:3.75em;line-height:1em}
+h3{font-size:1.4em;line-height:1em}
+.grid-col-4{grid-template-columns:repeat(3,1fr)}
+.grid-col-4 i{font-size:3em;line-height:1em}
+.left-img .frame{grid-column-start:1;grid-column-end:2}
+.right-img .frame{grid-column-start:2;grid-column-end:4;margin-bottom:72px}
+footer .grid-col-3{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:767px) {
+.hamburger{position:fixed;top:12px;right:10%;z-index:11}
+.hamburger + .top-menu{height:0;overflow:hidden;padding:0 10%}
+.top-menu a{font-size:1.4em;margin:24px 0}
+.hamburger.active + .top-menu{padding-top:72px;height:500px;overflow-y:auto}
+.hamburger .line{width:50px;height:5px;background-color:#aec3b0;display:block;margin:8px auto;-webkit-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+.hamburger:hover{cursor:pointer}
+.hamburger.active .line:nth-child(1){opacity:0;-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);-o-transform:translateX(-100%);transform:translateX(-100%)}
+.hamburger.active .line:nth-child(3){opacity:0;-webkit-transform:translateX(100%);-ms-transform:translateX(100%);-o-transform:translateX(100%);transform:translateX(100%)}
+.gradient-1:before{background-image:linear-gradient(20deg,rgba(18,69,89,.8)20%,rgba(174,195,176,.4),rgba(1,22,30,.9)80%)}
+h1{font-size:2.2em;line-height:1em;margin-bottom:0}
+h2{font-size:2.4em;line-height:1em}
+h1+h2{font-family:'Noto Sans',sans-serif;font-size:1.36em;line-height:1em;padding-top:60px;margin-top:-50px}
+h1:before{left:-12px}
+.grid-col-3,footer .grid-col-3{grid-template-columns:repeat(1,1fr)}
+#technologies .grid-col-3{grid-template-columns:repeat(2,1fr)}
+.grid-col-4{grid-template-columns:repeat(1,1fr)}
+.left-img,.right-img{margin:72px 0 0}
+.left-img h3,.left-img p,.right-img h3,.right-img p{margin-left:10%;margin-right:10%}
+.right-img i{margin-left:10%}
+.left-img .frame{grid-column-start:1;grid-column-end:2;grid-row-start:5;grid-row-end:10}
+.right-img .frame{grid-column-start:1;grid-column-end:2;grid-row-start:1;grid-row-end:2;margin:0}
+.right-img .frame img{position:relative;width:100%}
+footer p{margin-bottom:24px}
+}
+.copyright{font-family:'Squares';font-size:9px;margin-top:72px}
+.copyright span{vertical-align: top;margin:0 6px}
+</style>
 </head>
-
-<body data-spy="scroll" data-target=".primary-menu">
-<!-- Preloader -->
-<div class="preloader">
-    <div class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-    </div>
+<body>
+<div class="hamburger">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
 </div>
-<!-- Preloader / -->
-<!-- Main-Menu-Area -->
-<nav class="navbar mainmenu-area fixed-top" data-spy="affix" data-offset-top="200">
-    <div class="container">
-        <div class="equal-height">
-            <div class="site-branding">
-                <h2 class="head-title wow fadeInLeft" data-wow-delay="0.6s">		Codecagon Team
-                </h2>
+<nav class="top-menu">
+    <a class="logo" href="#home">
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg width="48" height="48" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
+        <style type="text/css">
+            .st0{fill:#C4143E;}
+            .st1{fill:#fff;}
+        </style>
+        <g>
+            <polygon class="st0" points="0,35.77 0,60.57 17.34,48.14 	"/>
+        </g>
+        <g>
+            <path class="st1" d="M32.79,73.61l-20.15,9.14l-12.3-21.3l17.97-12.93L32.79,73.61z M77.78,47.62l17.98-12.9L83.42,13.36
+                l-20.13,9.18L77.78,47.62z M13.34,83.41l21.34,12.32l-2.09-21.07L13.34,83.41z M82.84,12.69L61.4,0.31l2.1,21.16L82.84,12.69z
+                    M62.68,22.02L60.45,0L35.81,0l-2.29,22.02H62.68z M32.74,22.48l-20.13-9.19L0.17,34.84l18.02,12.84L32.74,22.48z M34.85,0.16
+                L13.28,12.62l19.42,8.87L34.85,0.16z M96,60.31V35.63L78.75,48L96,60.31z M61.25,95.77l21.37-12.34l-19.23-8.79L61.25,95.77z
+                    M77.78,48.38L63.21,73.6l20.11,9.21l12.47-21.59L77.78,48.38z M33.4,73.98L35.54,96h24.81l2.23-22.02H33.4z"/>
+        </g>
+        </svg>
+    </a>
+    <a class="top-menu-item active" href="#home">Home</a><br/>
+    <a href="#services">Services</a><br/>
+    <a href="#advantages">Advantages</a><br/>
+    <a href="#technologies">Technologies</a><br/>
+    <a href="#pricing">Pricing</a><br/>
+    <a href="#contact">Contact</a>
+</nav>
+<section id="home"class="gradient-1">                
+    <div class="video-bg">
+        <video src="codecagon-software.mp4" type="video/mp4" preload="none" autoplay loop muted></video>
+    </div>
+    
+    <div class="content">
+        <h1>Codecagon</h1>
+        <h2>Software development</h2>
+        <p>You can be sure that your project will be well designed, maintainable and developed with high quality assurance gates.</p>
+    </div>
+</section>
+<section id="services">
+    <div class="content">
+        <h2>Services</h2>
+        <p>We provide full stack of web development services from UI/UX design to integration testing and deployment. <a href="#contact">Contact us</a> to get detail information about services.</p>        
+    </div>
+    <div class="grid-col-4 right-img">                        
+        <div>                            
+            <h3>UI/UX Design</h3>
+            <i class="icon-palette"></i>
+            <p>We perform UI/UX design for your solutions. To decrease your expenses we start from prototyping proposed solution and can adjust it without big efforts. We also use modern tools to make design as fast as possible.</p>
+        </div>
+        <div>                            
+            <h3>Architecture design</h3>
+            <i class="icon-view-quilt"></i>
+            <p>We have experiance in application and solution arcitecture design, microservice, monolit and web applications. We provide all requested architecture documentation, and can offer architecture review of you existing solutions.</p>
+        </div>
+        <div>                            
+            <h3>Software engineering</h3>
+            <i class="icon-devices"></i>
+            <p>Codecagon team offer full software development stack. Using modern java and javascript frameworks we cover both frontend and backend development.</p>
+        </div>
+        <div>                            
+            <h3>Quality control</h3>
+            <i class="icon-high-quality"></i>
+            <p>We have mature Quality Assurance process. We perform automation unit testing, manual and automation end-to-end testing.</p>
+        </div>
+        <div>                            
+            <h3>DevOps</h3>
+            <i class="icon-settings"></i>
+            <p>In modern software development complexity of software infrastructure is very height. DevOps service becomes necessary. Codecagon team can provide customers with DevOps service.</p>
+        </div>
+        <div>                            
+            <h3>Testing environment</h3>
+            <i class="icon-settings-system"></i>
+            <p>We can provide our costomers with staging environment. This will allow you to postpone expanses for using cloud environments.</p>
+        </div>
+        <div class="frame">
+            <img src="codecagon-illustration.png" alt="Prototyping" title="Prototyping"/>
+        </div>                
+    </div>
+</section>
+<section id="advantages" class="gradient-2">
+    <div class="content">
+        <h2>Why should you choose us?</h2>
+        <p>Business with Codecagon team has many advantages</p>
+    </div>
+    <div class="grid-col-4 left-img">
+        <div class="frame">
+            <div class="video-bg">
+                <video src="codecagon-software.mp4" type="video/mp4" preload="none" autoplay loop muted></video>
             </div>
-            <div class="primary-menu">
-                <ul class="nav">
-                    <li class="active"><a href="#home-page">Home</a></li>
-                    <li><a href="#service-page">Services</a></li>
-                    <!-- <li><a href="#testimonial-page">Testimonial</a></li> -->
-                    <!-- <li><a href="#story-page">Stories</a></li> -->
-                    <li><a href="#advantages">Advantages</a></li>
-                    <li><a href="#technologies">Technologies</a></li>
-                    <li><a href="#price-page">Pricing</a></li>
-                    <!-- <li><a href="#team-page">Team</a></li> -->
-                    <li><a href="#contact-page">Contact us</a></li>
+        </div>
+        <div>                            
+            <h3>Quality</h3>
+            <p>Our quality assurance gates are height. We always use static analysis tools on CI. Also, we have test coverage requirements for a code base. All QA tools are automated and validated on CI for every Pull Request.</p>
+        </div>
+        <div>                            
+            <h3>Processes</h3>
+            <p>Mostly we work using agile methodologies Scrum or Kanban, this allows customers to receive predictable results each sprint, adjust requirements faster, manage risks perform better planning.</p>
+        </div>
+        <div>                            
+            <h3>Continuous integration and delivery</h3>
+            <p>Continuous integration and delivery are crucial for successful software development. That is why we set up CI/CD for you. We show project progress continuously. Our solutions are dockerized, well scaled and ready to be deployed on popular clouds like AWS and GCloud. We can offer a staging environment and provide our customers with DevOps services. .</p>
+        </div>
+        <div>                            
+            <h3>Progressive Web App</h3>
+            <p>It is very important today to propose business solution for all platforms and devices. But it is also very expansive. PWA is a technology that gives your web application a possibility to run on many devices and multiple platforms with one code base. This will save you a lot of money and bit your market competitors by starting on all platforms at once.</p>
+        </div>                  
+    </div>
+    <div id="technologies" class="content">
+        <h2>We are Good at Latest Technologies</h2>
+        <p>Using modern technologies is very important. It speed up product development, apply best development practices, make application maintainable, make developers happy.</p>
+        <div class="grid-col-3">
+            <div>
+                <h3>Server side</h3>
+                <ul>
+                    <li>Java</li>
+                    <li>Spring</li>
+                    <li>Hibernate</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                    <li>MongoDB</li>
                 </ul>
             </div>
-            <!-- <div class="hidden-sm">
-                <a href="#" class="bttn-1 bttn-ppl">Sign Up</a>
-            </div> -->
-        </div>
-    </div>
-</nav>
-<!-- Main-Menu-Area / -->
-<!-- Header-Area -->
-<div id="home-page"></div>
-<header class="header-area" style="background-image: url('images/header-bg-2.png'); background-position: right top;">
-    <div class="container">
-        <div class="row equal-height">
-            <div class="col-xs-12 col-sm-12 col-md-5">
-                <h2 class="head-title wow fadeInLeft" data-wow-delay="0.6s">
-                    Software development
-                </h2>
-                <div class="desc wow fadeInLeft about-description" data-wow-delay="0.8s">
-                    <p>
-                        We are the team of skilled software engineers with experience in web application development, strong knowledge, high quality believes and mature agile project management approaches. We are client oriented, that is why customer communication and transparent development process is important for us. We do our job to help customer cover business needs not just to develop cool apps.
-                    </p>
-                    <p>
-                        With us, you can be sure that your project will be well designed, maintainable and developed with high quality assurance gates. Understanding client motivation and business needs are crucial for us that is why much attention is paid to communication.
-                    </p>
-                    <p>
-                        Our engineers have up to seven years of commercial experience in Java web application development. We use new and most popular frameworks like spring, angular, progressive web apps to provide your business solutions as much fast, quality, and maintainable as possible.
-                        We use agile project management and have SAFe® 4 Practitioner certificate.
-                    </p>
-                </div>
-                <div class="space-20"></div>
-                <a href="#service-page" class="bttn-1 bttn-ppl wow fadeInLeft scroll-navigation" data-wow-delay="1s">Find out more</a>
-                <div class="space-50"></div>
-
+            <div>                            
+                <h3>Front End</h3>
+                <ul>
+                    <li>Angular</li>
+                    <li>AngularJS</li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>PWA</li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
-                <div class="hidden visible-xs visible-sm space-60"></div>
-                <figure class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="images/header-shape-2.png" alt="illustration">
-                </figure>
+            <div>                            
+                <h3>Quality</h3>
+                <ul>
+                    <li>Manual Testing</li>
+                    <li>JUnit</li>
+                    <li>Mockito</li>
+                    <li>Karma</li>
+                    <li>Jasmine</li>
+                    <li>Cucumber</li>
+                    <li>Serenity</li>
+                    <li>Code Static Analysis</li>
+                </ul>
             </div>
-        </div>
-    </div>
-</header>
-<div class="service-area gray-bg section-padding" id="service-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="page-title">
-                    <h3 class="title">Services we provide</h3>
-                    <div class="desc">We provide full stack of web development services from UI/UX design to integration testing and deployment. Contact us to get detail information about services.</div>
-                    <div class="space-60"></div>
-                </div>
+            <div>                            
+                <h3>Processes</h3>
+                <ul>
+                    <li>Scrum</li>
+                    <li>Kanban</li>
+                    <li>SAFe</li>
+                </ul>
             </div>
-        </div>
-        <div class="row services-list">
-            <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.7s">
-                <div class="single-service two">
-                    <!-- <div class="service-icon"><img src="images/searchapi.png" alt="Service Icon"></div> -->
-                    <h3 class="title">UI/UX Design</h3>
-                    <p>We perform UI/UX design for your solutions. To decrease your expenses we start from prototyping proposed solution and can adjust it without big efforts. We also use modern tools to make design as fast as possible</p><!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
+            <div>                            
+                <h3>CI/CD</h3>
+                <ul>
+                    <li>Docker</li>
+                    <li>Kubernatise</li>
+                    <li>Bitbucket Piplines</li>
+                    <li>GIT</li>
+                    <li>QA automation</li>
+                </ul>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.5s">
-                <div class="single-service two">
-                    <!-- <div class="service-icon"><img src="images/offlinesearch.png" alt="Service Icon"></div> -->
-                    <h3 class="title">Architecture design</h3>
-                    <p>We have experiance in application and solution arcitecture design, microservice, monolit and web applications. We provide all requested architecture documentation, and can offer architecture review of you existing solutions</p><!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.3s">
-                <div class="single-service two">
-                    <!-- <div class="service-icon"><img src="images/abtesting.png" alt="Service Icon"></div> -->
-                    <h3 class="title">Software engineering </h3>
-                    <p>Codecagon team offer full software development stack. Using modern java and javascript frameworks we cover both frontend and backend development</p><!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.3s">
-                <div class="single-service two">
-                    <!-- <div class="service-icon"><img src="images/abtesting.png" alt="Service Icon"></div> -->
-                    <h3 class="title">Quality control </h3>
-                    <p>We have mature Quality Assurance process. We perform automation unit testing, manual and automation end-to-end testing</p><!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.3s">
-                <div class="single-service two">
-                    <!-- <div class="service-icon"><img src="images/abtesting.png" alt="Service Icon"></div> -->
-                    <h3 class="title">DevOps</h3>
-                    <p>In modern software development complexity of software infrastructure is very height. DevOps service becomes necessary. Codecagon team can provide customers with DevOps service</p><!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.3s">
-                <div class="single-service two">
-                    <!-- <div class="service-icon"><img src="images/abtesting.png" alt="Service Icon"></div> -->
-                    <h3 class="title">Tasting environment</h3>
-                    <p>We can provide our costumers with staging environment. This will allow you to postpone expanses for using cloud environments</p><!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
+            <div>                            
+                <h3>Design</h3>
+                <ul>
+                    <li>UML</li>
+                    <li>Prototyping</li>
+                    <li>Balsamiq</li>
+                    <li>Zeplin</li>
+                </ul>
             </div>
         </div>
-    </div>
-</div>
-<!-- Header-Area / -->
-<section class="section-padding" id="advantages">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="page-title">
-                    <h3 class="title">Why should you choose us</h3>
-                    <div class="desc">Business with Codecagon team has many advantages here are some of them</div>
-                    <div class="space-60"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row equal-height">
-            <div class="col-xs-12 col-sm-5 text-center">
-                <figure class="text-left">
-                    <img src="images/iliastation-2.png" alt="">
-                </figure>
-                <div class="space-30 hidden visible-xs"></div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-sm-offset-1">
-                <div class="single-service-two">
-                    <!--  <h5 class="icon-title">
-                         <span class="icon"><i class="fas fa-search"></i></span>Find-To-Conversion
-                     </h5> -->
-                    <div class="space-10"></div>
-                    <h3 class="title">Quality</h3>
-                    <p>Our quality assurance gates are height. We always use static analysis tools on CI. Also, we have test coverage requirements for a code base. All QA tools are automated and validated on CI for every Pull Request.</p>
-                    <!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="space-50"></div>
-        <div class="row equal-height revers">
-            <div class="col-xs-12 col-sm-5 text-center">
-                <figure class="text-right xs-left">
-                    <img src="images/iliastation-1.png" alt="">
-                </figure>
-                <div class="space-30 hidden visible-xs"></div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-sm-offset-1">
-                <div class="single-service-two">
-                    <!-- <h5 class="icon-title">
-                        <span class="icon"><i class="far fa-user"></i></span>Customers-To-Discover
-                    </h5> -->
-                    <div class="space-10"></div>
-                    <h3 class="title">Processes</h3>
-                    <p>Mostly we work using agile methodologies Scrum or Kanban, this allows customers to receive predictable results each sprint, adjust requirements faster, manage risks perform better planning.</p>
-                    <!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="space-50"></div>
-        <div class="row equal-height">
-            <div class="col-xs-12 col-sm-5 text-center">
-                <figure class="text-left">
-                    <img src="images/iliastation-3.png" alt="">
-                </figure>
-                <div class="space-30 hidden visible-xs"></div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-sm-offset-1">
-                <div class="single-service-two">
-                    <!-- <h5 class="icon-title">
-                        <span class="icon"><i class="far fa-lightbulb"></i></span>Product-To-Inspire
-                    </h5> -->
-                    <div class="space-10"></div>
-                    <h3 class="title">Continuous integration and delivery</h3>
-                    <p>Continuous integration and delivery are crucial for successful software development. That is why we set up CI/CD for you. We show project progress continuously.
-                        Our solutions are dockerized, well scaled and ready to be deployed on popular clouds like AWS and GCloud.
-                        We can offer a staging environment and provide our customers with DevOps services. </p>
-                    <!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="row equal-height revers">
-            <div class="col-xs-12 col-sm-5 text-center">
-                <figure class="text-right xs-left">
-                    <img src="images/iliastation-1.png" alt="">
-                </figure>
-                <div class="space-30 hidden visible-xs"></div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-sm-offset-1">
-                <div class="single-service-two">
-                    <!-- <h5 class="icon-title">
-                        <span class="icon"><i class="far fa-user"></i></span>Customers-To-Discover
-                    </h5> -->
-                    <div class="space-10"></div>
-                    <h3 class="title">Progressive Web App</h3>
-                    <p>It is very important today to propose business solution for all platforms and devices. But it is also very expansive. PWA is a technology that gives your web application a possibility to run on many devices and multiple platforms with one code base. This will save you a lot of money and bit your market competitors by starting on all platforms at once.</p>
-                    <!-- <a href="#" class="bttn-more ppl">Read More</a> -->
-                </div>
-            </div>
+    </div>            
+</section>
+<section id="pricing">
+    <div class="content">
+        <h2>Price policy</h2>                
+        <div class="grid-col-3">
+            <p>We are the team of skilled software engineers with experience in web application development, strong knowledge, high quality believes and mature agile project management approaches. We are client oriented, that is why customer communication and transparent development process is important for us. We do our job to help customer cover business needs not just to develop cool apps.</p>
+            <p>Understanding client motivation and business needs are crucial for us that is why much attention is paid to communication. Every customer is different and so as the project. That is why we always try to find an individual approach to all of our partners. Mostly our work is hourly rated. That is why we can provide our customer with a raw invoice only after initial work estimation. Also, the invoice depends on the number and experience of developers that are involved in the project and some paid external resources if any, like deployment or CI environments. For more details please <a href="#contact">contact us</a> and we will be glad to provide you with more details.</p>
+            <p>Our engineers have up to seven years of commercial experience in Java web application development. We use new and most popular frameworks like spring, angular, progressive web apps to provide your business solutions as much fast, quality, and maintainable as possible. We use agile project management and have SAFe® 4 Practitioner certificate.</p>
         </div>
     </div>
 </section>
-<section class="section-padding gray-bg"  id="technologies">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="page-title text-left">
-                    <h3>We are good at</h3>
-                    <h3 class="title"><b>Latest Technologies</b></h3>
-                    <div class="space-10"></div>
-                </div>
-                <div class="space-5"></div>
-                <p>
-                    Using modern technologies is very important. It speed up product development, apply best development practices, make application maintainable, make developers happy.
-                </p>
-                <div class="space-20"></div>
-                <a href="#contact-page" class="bttn-1 bttn-ppl">Contact us</a>
-                <div class="hidden visible-xs visible-sm space-50"></div>
+<footer id="contact">
+    <div class="content">
+        <h2>Get In Touch</h2>
+        <div class="grid-col-3">
+            <div>
+                <i>Email</i>
+                <p>yaroslav.prokipchyn@gmail.com</p>
+                <i>Location</i>
+                <p>Julian Tselevych street 34/1<br/>
+                Ivano-Frankivsk, 76008<br/>
+                Ukraine</p>
+                <i>Phone</i>
+                <p>+380932941987</p>                    
             </div>
-            <div class="col-md-7 col-md-offset-1">
-                <div class="row start-height">
-                    <div class="xs-full col-xs-6 col-md-4">
-                        <div class="single-feature-list">
-                            <h4 class="title">Server side</h4>
-                            <ul>
-                                <li>Java</li>
-                                <li>Spring</li>
-                                <li>Hibernate</li>
-                                <li>JavaScript</li>
-                                <li>NodeJS</li>
-                                <li>MongoDB</li>
-                            </ul>
-                        </div>
-                        <div class="hidden visible-xs visible-sm space-30"></div>
-                        <div class="space-30 hidden-xs hidden-sm"></div>
-                    </div>
-                    <div class="xs-full col-xs-6 col-md-4">
-                        <div class="single-feature-list">
-                            <h4 class="title">Front End</h4>
-                            <ul>
-                                <li>Angular</li>
-                                <li>AngularJS</li>
-                                <li>JavaScript</li>
-                                <li>TypeScript</li>
-                                <li>HTML5</li>
-                                <li>CSS3</li>
-                                <li>PWA</li>
-                            </ul>
-                        </div>
-                        <div class="hidden visible-xs visible-sm space-30"></div>
-                        <div class="space-30 hidden-xs hidden-sm"></div>
-                    </div>
-                    <div class="xs-full col-xs-6 col-md-4">
-                        <div class="single-feature-list">
-                            <h4 class="title">Quality</h4>
-                            <ul>
-                                <li>Manual Testing</li>
-                                <li>JUnit</li>
-                                <li>Mockito</li>
-                                <li>Karma</li>
-                                <li>Jasmine</li>
-                                <li>Cucumber</li>
-                                <li>Serenity</li>
-                                <li>Code Static Analysis</li>
-                            </ul>
-                        </div>
-                        <div class="hidden visible-xs visible-sm space-30"></div>
-                        <div class="space-30 hidden-xs hidden-sm"></div>
-                    </div>
-                    <div class="xs-full col-xs-6 col-md-4">
-                        <div class="single-feature-list">
-                            <h4 class="title">Processes</h4>
-                            <ul>
-                                <li>Scrum</li>
-                                <li>Kanban</li>
-                                <li>SAFe</li>
-                            </ul>
-                        </div>
-                        <div class="hidden visible-xs visible-sm space-30"></div>
-                    </div>
-                    <div class="xs-full col-xs-6 col-md-4">
-                        <div class="single-feature-list">
-                            <h4 class="title">CI/CD</h4>
-                            <ul>
-                                <li>Docker</li>
-                                <li>Kubernatise</li>
-                                <li>Bitbucket Piplines</li>
-                                <li>GIT</li>
-                                <li>QA automation</li>
-                            </ul>
-                        </div>
-                        <div class="hidden visible-xs space-30"></div>
-                    </div>
-                    <div class="xs-full col-xs-6 col-md-4">
-                        <div class="single-feature-list">
-                            <h4 class="title">Design</h4>
-                            <ul>
-                                <li>UML</li>
-                                <li>Prototyping</li>
-                                <li>Balsamiq</li>
-                                <li>Zeplin</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p>Every customer is different and so as the project. That is why we always try to find an individual approach to all of our partners. Mostly our work is hourly rated. That is why we can provide our customer with a raw invoice only after initial work estimation. Also, the invoice depends on the number and experience of developers that are involved in the project and some paid external resources if any, like deployment or CI environments. For more details please <a href="#contact">contact us</a> and we will be glad to provide you with more details.</p>        
+            <form id="contact-form">
+                <input type="text" name="form-name" id="form-name" class="form-input" placeholder="Name" required="" >
+                <input type="email" name="form-email" id="form-email" class="form-input" placeholder="Email" required="">
+                <input type="text" name="form-phone" class="form-input" id="form-phone" placeholder="Phone">
+                <textarea class="form-input" name="form-message" id="form-message" placeholder="How may we assist you?" rows="3"></textarea>
+                <button class="bttn-1 bttn-ppl" type="submit">Send Message</button>
+            </form>
         </div>
     </div>
-</section>
-
-<section class="section-padding price-area" id="price-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="page-title">
-                    <h3 class="title">Price policy</h3>
-                    <div class="desc">Every customer is different and so as the project. That is why we always try to find an individual approach to all of our partners. Mostly our work is hourly rated. That is why we can provide our customer with a raw invoice only after initial work estimation. Also, the invoice depends on the number and experience of developers that are involved in the project and some paid external resources if any, like deployment or CI environments.
-                        For more details please contact us and we will be glad to provide you with more details.</div>
-                    <div class="space-60"></div>
-                </div>
-            </div>
-        </div>
+    <div class="copyright text-center">
+        <span>© Codecagon 2017-2018</span>
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg width="24" height="24" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
+        <style type="text/css">
+            .st0{fill:#C4143E;}
+            .st1{fill:#fff;}
+        </style>
+        <g>
+            <polygon class="st0" points="0,35.77 0,60.57 17.34,48.14 	"/>
+        </g>
+        <g>
+            <path class="st1" d="M32.79,73.61l-20.15,9.14l-12.3-21.3l17.97-12.93L32.79,73.61z M77.78,47.62l17.98-12.9L83.42,13.36
+                l-20.13,9.18L77.78,47.62z M13.34,83.41l21.34,12.32l-2.09-21.07L13.34,83.41z M82.84,12.69L61.4,0.31l2.1,21.16L82.84,12.69z
+                    M62.68,22.02L60.45,0L35.81,0l-2.29,22.02H62.68z M32.74,22.48l-20.13-9.19L0.17,34.84l18.02,12.84L32.74,22.48z M34.85,0.16
+                L13.28,12.62l19.42,8.87L34.85,0.16z M96,60.31V35.63L78.75,48L96,60.31z M61.25,95.77l21.37-12.34l-19.23-8.79L61.25,95.77z
+                    M77.78,48.38L63.21,73.6l20.11,9.21l12.47-21.59L77.78,48.38z M33.4,73.98L35.54,96h24.81l2.23-22.02H33.4z"/>
+        </g>
+        </svg>
+        <span> All rights reserved</span>
     </div>
-</section>
-<div class="contact-page gray-bg" id="contact-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <div class="page-title text-left">
-                    <h3 class="title">Get In Touch</h3>
-                    <div class="desc">If you want </div>
-                    <div class="space-60"></div>
-                </div>
-                <div class="info-box">
-                    <div class="icon"><i class="fa fa-envelope"></i></div>
-                    <div class="info_content">
-                        <h5 class="title">E-mail Address</h5>
-                        <a href="mailto:yaroslav.prokipchyn@gmail.com">yaroslav.prokipchyn@gmail.com</a>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <div class="icon"><i class="fa fa-mobile"></i></div>
-                    <div class="info_content">
-                        <h5 class="title">Phone Number</h5>
-                        <a href="tel:+380932941987">+380932941987</a>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                    <div class="info_content">
-                        <h5 class="title">Location</h5>
-                        <span>
-                            Julian Tselevych street 34/1
-                            </br>
-                            Ivano-Frankivsk, 76008
-                            </br>
-                            Ukraine
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="contact-form-2">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" name="form-name" id="form-name" class="form-input" placeholder="Name..." required="" >
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="form-email" id="form-email" class="form-input" placeholder="E-mail..." required="">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="form-phone" class="form-input" id="form-phone" placeholder="Phone Number...">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-input" name="form-message" id="form-message" placeholder="How may we assist you?" rows="5"></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button class="bttn-1 bttn-ppl" type="submit">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer-Area -->
-<!--Vendor-JS-->
-<script src="js/vendor/jquery-1.12.4.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<!--Plugin-JS-->
-<script src="js/contact-form.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/magnific-popup.min.js"></script>
-<script src="js/slicknav.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/scrollUp.min.js"></script>
-<!--Main-active-JS-->
-<script src="js/main.js"></script>
+</footer>
+<link href="https://fonts.googleapis.com/css?family=Anton|Noto+Sans:400,400i,700,700i&amp;subset=cyrillic"" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function() {
+    $('.hamburger').click(function(e) {
+        e.stopPropagation();
+        if ($(this).hasClass('active')) {
+            $(this).find('.top-menu');
+            $(this).removeClass('active');
+        } else {
+            closeMenu();
+            $(this).find('.top-menu');
+            $(this).addClass('active');
+        }
+    });
+    function closeMenu() {
+        $('.top-menu');
+        $('.hamburger').removeClass('active');
+    }
+    $(document.body).click(function(e) {
+        closeMenu();
+    });
+    $(".top-menu").click(function(e) {
+        $('.hamburger').removeClass('active');
+        e.stopPropagation();
+    });
+});
+</script>
 </body>
-
 </html>

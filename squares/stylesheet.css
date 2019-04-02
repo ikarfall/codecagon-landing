@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Squares';
+    src: url('SquaresBold.eot');
+    src: url('SquaresBold.eot?#iefix') format('embedded-opentype'),
+        url('SquaresBold.woff2') format('woff2'),
+        url('SquaresBold.woff') format('woff'),
+        url('SquaresBold.ttf') format('truetype'),
+        url('SquaresBold.svg#SquaresBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
